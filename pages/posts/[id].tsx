@@ -29,7 +29,6 @@ export default function PostPage() {
     .NEXT_PUBLIC_API_URL!}/api/v1/replies/${id}`;
   ///
   const { data: post, mutate: mutatePost } = useSWR(postApiUrl, fetchPostById);
-  console.log(`sentId ${id}`);
   const {
     data: replies,
     isValidating: isValidatingReplies,

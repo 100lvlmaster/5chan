@@ -1,5 +1,4 @@
 import { userStore } from '@/lib/store';
-import { User } from '@/lib/types';
 import { getUser } from '@/lib/user';
 import { Flex, Spacer, Text, Avatar } from '@chakra-ui/react';
 import Head from 'next/head';
@@ -15,6 +14,7 @@ export const Container = ({ children, title, navTrailing }: Props) => {
   const [user, setUser] = userStore((state) => [state.user, state.setUser]);
   useEffect(() => {
     initUser();
+    console.log(`Have a nice day 🔥`);
   }, []);
   const initUser = async (): Promise<void> => {
     if (!user) {
