@@ -5,6 +5,8 @@ import {
   Divider,
   Textarea,
   Button,
+  Spinner,
+  Center,
   useToast,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
@@ -26,13 +28,13 @@ export default function PostPage() {
   const replyApiUrl = `${process.env
     .NEXT_PUBLIC_API_URL!}/api/v1/replies/${id}`;
   ///
-  const { data: post, error } = useSWR(postApiUrl, fetchPostById);
+  const { data: post, mutate: mutatePost } = useSWR(postApiUrl, fetchPostById);
+  console.log(`sentId ${id}`);
   const {
     data: replies,
+    isValidating: isValidatingReplies,
     mutate,
-    error: replyError,
   } = useSWR(replyApiUrl, fetchReplies);
-
   ///
 
   const handleInputChange = (e: any): void => {
@@ -104,13 +106,19 @@ export default function PostPage() {
         py="5"
         experimental_spaceY="5"
       >
-        {replies?.map((e) => (
-          <Box key={e.ID} borderWidth="1" borderColor="gray">
-            <Text fontSize="x-small">{e.author}</Text>
-            <Text fontSize="md">{e.body}</Text>
-            <Divider borderColor="gray.300" py="2" />
-          </Box>
-        ))}
+        {!isValidatingReplies ? (
+          replies?.map((e) => (
+            <Box key={e.ID} borderWidth="1" borderColor="gray">
+              <Text fontSize="x-small">{e.author}</Text>
+              <Text fontSize="md">{e.body}</Text>
+              <Divider borderColor="gray.300" py="2" />
+            </Box>
+          ))
+        ) : (
+          <Center>
+            <Spinner size="xl" />
+          </Center>
+        )}
       </Flex>
     </Container>
   );

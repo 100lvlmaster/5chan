@@ -2,7 +2,6 @@ export interface UserStore {
   user: User | undefined;
   setUser: (user: User) => void;
 }
-
 export interface User {
   id: string;
   avatar: string;
