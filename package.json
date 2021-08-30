@@ -1,0 +1,52 @@
+{
+  "name": "5chan",
+  "description": "The 4chan clone with one up",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Navin Kodag <https://100lvlmaster.in> @100lvlmaster",
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "starter",
+    "typescript"
+  ],
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc",
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\"",
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(ts|js|tsx)\" --write"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "1.0.15",
+    "@chakra-ui/react": "1.6.7",
+    "@dicebear/avatars": "4.8.4",
+    "@dicebear/micah": "4.8.4",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "formik": "2.2.9",
+    "framer-motion": "^4.1.17",
+    "nanoid": "3.1.25",
+    "next": "11.1.0",
+    "preact": "10.5.14",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "swr": "1.0.0",
+    "zustand": "3.5.10"
+  },
+  "devDependencies": {
+    "@types/node": "16.7.6",
+    "@types/react": "17.0.19",
+    "@types/react-dom": "17.0.9",
+    "@typescript-eslint/eslint-plugin": "4.29.3",
+    "@typescript-eslint/parser": "4.29.3",
+    "autoprefixer": "10.3.3",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.0",
+    "postcss": "8.3.6",
+    "prettier": "2.3.2",
+    "tailwindcss": "2.2.9",
+    "typescript": "4.4.2"
+  }
+}
