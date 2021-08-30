@@ -20,7 +20,6 @@ export const postReply = async (reply: Reply): Promise<Reply | undefined> => {
     headers: { 'Content-Type': 'application/json', Authorization: apiKey },
     body: JSON.stringify(reply),
   };
-  console.log(req);
   const result = await fetch(apiUrl, req);
   if (result.status >= 400) {
     return;

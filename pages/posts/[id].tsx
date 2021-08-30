@@ -47,15 +47,21 @@ export default function PostPage() {
         author: user.id,
         postId: id as string,
       });
-      if (result) {
-        setValue('');
+      setValue('');
+      if (!result) {
         toast({
-          title: 'Reply created',
-          status: 'success',
+          title: 'Could not reply',
+          status: 'error',
           duration: 7000,
         });
-        mutate([...(replies ?? []), result]);
+        return;
       }
+      mutate([...replies!, result]);
+      toast({
+        title: 'Reply created',
+        status: 'success',
+        duration: 7000,
+      });
     }
   };
   ///
