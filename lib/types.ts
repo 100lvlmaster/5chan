@@ -15,6 +15,7 @@ export interface Post {
   title: string;
   author: string;
   body: string;
+  replies?: Reply[];
 }
 export interface Reply {
   CreatedAt?: Date;

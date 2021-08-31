@@ -34,3 +34,18 @@ export const createPost = async (post: Post): Promise<Post | undefined> => {
   }
   return (await result.json()) as Post;
 };
+///
+
+export const deletePost = async (url: string): Promise<boolean> => {
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+  const req: RequestInit = {
+    method: `DELETE`,
+    headers: { Authorization: apiKey! },
+  };
+  const result = await fetch(url, req);
+  if (result.status >= 400) {
+    return false;
+  }
+
+  return true;
+};
