@@ -58,6 +58,13 @@ export default function Home() {
           </OrderedList>
         </Box>
       </Flex>
+      <Spacer></Spacer>
+      <Center>
+        <Flex align="center" flexDir="row">
+          <Text>Made with ❤️ by</Text>
+          <Text>100lvlmaster</Text>
+        </Flex>
+      </Center>
     </Container>
   );
 }

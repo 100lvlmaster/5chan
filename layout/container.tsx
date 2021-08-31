@@ -1,6 +1,18 @@
 import { userStore } from '@/lib/store';
 import { getUser } from '@/lib/user';
-import { Flex, Spacer, Text, Avatar } from '@chakra-ui/react';
+import {
+  Flex,
+  Spacer,
+  Text,
+  Avatar,
+  MenuButton,
+  Menu,
+  Button,
+  MenuItem,
+  MenuList,
+  MenuGroup,
+  MenuDivider,
+} from '@chakra-ui/react';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { useEffect } from 'react';
@@ -10,6 +22,7 @@ interface Props {
   title?: string;
   navTrailing?: JSX.Element;
 }
+///
 export const Container = ({ children, title, navTrailing }: Props) => {
   const [user, setUser] = userStore((state) => [state.user, state.setUser]);
   useEffect(() => {
@@ -56,12 +69,27 @@ export const Container = ({ children, title, navTrailing }: Props) => {
         </NextLink>
         <Spacer />
         <Text fontWeight="bold" fontSize="lg">
-          {title ?? ''}
+          {title ?? '5chan'}
         </Text>
         <Spacer />
         {navTrailing ? navTrailing : ''}
 
-        {user ? <Avatar src={user.avatar} alt={`avatar.png`} /> : ``}
+        {user ? (
+          <Menu>
+            <MenuButton>
+              <Avatar src={user.avatar} alt={`avatar.png`} />
+            </MenuButton>
+            <MenuList textColor="teal">
+              <NextLink href="/">
+                <a>
+                  <MenuItem>About</MenuItem>
+                </a>
+              </NextLink>
+            </MenuList>
+          </Menu>
+        ) : (
+          ``
+        )}
       </Flex>
       {children}
     </Flex>
