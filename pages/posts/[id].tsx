@@ -100,11 +100,15 @@ export default function PostPage() {
           <Text textAlign="right" fontSize="xs">
             ~{post?.author}
           </Text>
-          <Flex w="full" flexDir="row" experimental_spaceX="3" py="2">
-            <Spacer />
-            <EditIcon />
-            <CustomDeleteButton onDelete={onDeleteHandler} />
-          </Flex>
+          {user?.id === post.author ? (
+            <Flex w="full" flexDir="row" experimental_spaceX="3" py="2">
+              <Spacer />
+              <EditIcon />
+              <CustomDeleteButton onDelete={onDeleteHandler} />
+            </Flex>
+          ) : (
+            ''
+          )}
         </Box>
       ) : (
         <Center p="20">
