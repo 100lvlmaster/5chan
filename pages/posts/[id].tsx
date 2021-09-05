@@ -103,7 +103,7 @@ export default function PostPage() {
           {user?.id === post.author ? (
             <Flex w="full" flexDir="row" experimental_spaceX="3" py="2">
               <Spacer />
-              <EditIcon />
+              {/* <EditIcon /> */}
               <CustomDeleteButton onDelete={onDeleteHandler} />
             </Flex>
           ) : (
