@@ -62,7 +62,9 @@ export default function Home() {
       <Center>
         <Flex align="center" flexDir="row">
           <Text>Made with ❤️ by</Text>
-          <Text>100lvlmaster</Text>
+          <a href="https://100lvlmaster.in">
+            <Text decoration="underline">100lvlmaster</Text>
+          </a>
         </Flex>
       </Center>
     </Container>

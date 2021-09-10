@@ -1,6 +1,6 @@
 # 5chan
 
-![5chan-logo.png](public/favicon.png)
+<img src="public/favicon.png" height="50" width="50">
 
 _The 4chan clone with a one up_
 
