@@ -30,12 +30,14 @@
     "nanoid": "3.1.25",
     "next": "11.1.2",
     "preact": "10.5.14",
+    "prisma": "4.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "swr": "1.0.0",
     "zustand": "3.5.10"
   },
   "devDependencies": {
+    "@prisma/client": "4.1.1",
     "@types/node": "16.7.9",
     "@types/react": "17.0.19",
     "@types/react-dom": "17.0.9",
@@ -44,9 +46,11 @@
     "autoprefixer": "10.3.3",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "joi": "17.6.0",
+    "next-connect": "0.13.0",
+    "next-joi": "2.2.1",
     "postcss": "8.3.6",
     "prettier": "2.3.2",
-    "tailwindcss": "2.2.9",
     "typescript": "4.4.2"
   }
 }
