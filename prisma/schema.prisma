@@ -2,30 +2,32 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
 }
 
-model Post {
-  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+model post {
+  id         Int       @id @default(autoincrement())
   title      String
   body       String
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
   author     String
-  Comment    Comment[]
+  comment    comment[]
 }
 
-model Comment {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+model comment {
+  id         Int      @id @default(autoincrement())
   body       String
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
-  post       Post     @relation(fields: [post_id], references: [id])
-  post_id    String   @db.ObjectId
   author     String
+  post       post     @relation(fields: [post_id], references: [id])
+  post_id    Int
 }

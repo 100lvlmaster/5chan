@@ -4,14 +4,20 @@ import Joi from 'joi';
 import { NextApiRequest, NextApiResponse } from 'next';
 import nc from 'next-connect';
 
-const schema = Joi.object({
+const getSchema = Joi.object({
+  // page: Joi.number().required(),
+  // offset: Joi.number().required(),
+});
+
+const createSchema = Joi.object({
   title: Joi.string().required(),
   body: Joi.string().required(),
   author: Joi.string().required(),
 });
+
 ///
 export default nc<NextApiRequest, NextApiResponse>()
-  .get(validate({ body: schema }), cntlr.createPost)
-  .post(validate({ body: schema }), cntlr.createPost);
+  .get(validate({ query: getSchema }), cntlr.getPosts)
+  .post(validate({ body: createSchema }), cntlr.createPost);
 
 // export default handler;

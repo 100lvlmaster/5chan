@@ -23,14 +23,13 @@
     "@chakra-ui/react": "1.6.7",
     "@dicebear/avatars": "4.8.4",
     "@dicebear/micah": "4.8.4",
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "formik": "2.2.9",
     "framer-motion": "^4.1.17",
     "nanoid": "3.1.25",
     "next": "11.1.2",
     "preact": "10.5.14",
-    "prisma": "4.1.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "swr": "1.0.0",
@@ -51,6 +50,7 @@
     "next-joi": "2.2.1",
     "postcss": "8.3.6",
     "prettier": "2.3.2",
+    "prisma": "4.5.0",
     "typescript": "4.4.2"
   }
 }
